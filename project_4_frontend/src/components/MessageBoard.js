@@ -1,29 +1,64 @@
 import React, {Component} from 'react'
-
+import Form from "./Form.js"
 
 class MessageBoard extends Component {
   constructor(props){
     super(props)
     this.state = {
       posts: [],
-      currentView: 'showAll',
+      currentView: "showAll",
       randomMusicChats:[],
       lookingForABand:[],
       lookingForAMusican:[],
       buyingOrSelling: []
     }
   }
-  handleSubmit = () => {
-    // fetch create
+
+  componentDidMount(){
+    this.getposts()
   }
+
+ getposts = () => {
+   fetch("http://localhost:3000/posts")
+   .then(data=>data.json())
+   .then(json => {
+     this.sortPosts(json)
+   })
+ }
+sortPosts = (posts) => {
+  let random = []
+  let lookingForABand = []
+  let lookingForAMusician = []
+  let buyingOrSelling = []
+posts.forEach((post)=> {
+  if (post.view === "showRandom"){
+    random.push(post)
+  }else if (post.view === "showLookingForBand"){
+    lookingForABand.push(post)
+  }else if(post.view==="showLookingForMusician"){
+    lookingForAMusician.push(post)
+  }else if (post.view ==="showBuyingOrSelling"){
+   buyingOrSelling.push(post)
+  }
+})
+this.setPosts(posts,random,lookingForABand,lookingForAMusician,buyingOrSelling)
+}
+setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) => {
+  this.setState({
+  posts: posts,
+  randomMusicChats: random,
+  lookingForABand: lookingForABand,
+  lookingForAMusican: lookingForAMusician,
+  buyingOrSelling: buyingOrSelling
+  })
+}
+
   handleViews = (view) => {
     this.setState({
       currentView: view
     })
   }
-  handleChange = (e) => {
-    this.setState({[e.target.id]:e.target.value})
-  }
+
   render(){
     return (
       <div className = 'container'>
@@ -50,7 +85,9 @@ class MessageBoard extends Component {
         this.state.posts.map((post,index) => {
          return(
            <div key ={index} className ="singularPost">
-
+            {post.content}
+            {post.number_of_likes}
+            {post.author}
            </div>
          )
        }) : '' }
@@ -58,7 +95,9 @@ class MessageBoard extends Component {
         this.state.randomMusicChats.map((post,index) => {
          return(
            <div key ={index} className ="singularPost">
-
+           {post.content}
+           {post.number_of_likes}
+           {post.author}
            </div>
          )
        }) : '' }
@@ -66,7 +105,9 @@ class MessageBoard extends Component {
         this.state.lookingForABand.map((post,index) => {
          return(
            <div key ={index} className ="singularPost">
-
+           {post.content}
+           {post.number_of_likes}
+           {post.author}
            </div>
          )
        }) : '' }
@@ -74,7 +115,9 @@ class MessageBoard extends Component {
         this.state.lookingForAMusican.map((post,index) => {
          return(
            <div key ={index} className ="singularPost">
-
+           {post.content}
+           {post.number_of_likes}
+           {post.author}
            </div>
          )
        }) : '' }
@@ -82,21 +125,14 @@ class MessageBoard extends Component {
         this.state.buyingOrSelling.map((post,index) => {
          return(
            <div key ={index} className ="singularPost">
-          
+           {post.content}
+           {post.number_of_likes}
+           {post.author}
            </div>
          )
        }) : '' }
        </div>
-        <div className = 'createPost'>
-          <form onSubmit ={this.handleSubmit}>
-          <textarea
-          onChange ={this.handleChange}
-          id='content'
-          value = {this.state.content}
-          type = 'text'
-          />
-          </form>
-        </div>
+        <Form submit={this.handleSubmit} view={this.state.currentView} />
       </div>
     </div>
     )
