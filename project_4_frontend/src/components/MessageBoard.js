@@ -22,7 +22,7 @@ class MessageBoard extends Component {
    fetch("http://localhost:3000/posts")
    .then(data=>data.json())
    .then(json => {
-     this.sortPosts(json)
+     this.sortPosts(json.posts)
    })
  }
 sortPosts = (posts) => {
