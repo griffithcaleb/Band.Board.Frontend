@@ -12,7 +12,8 @@ class Nav extends Component{
         board: false,
         posts: false,
         userPost:false,
-        home:true
+        home:true,
+        userProfile:false
       }
     }
   }
@@ -49,6 +50,7 @@ class Nav extends Component{
         <span id="posts">Posts </span>
         <span id="board">Board </span>
         <span id="userPost">User Post </span>
+        <span id="userProfile">Profile </span>
         <span id="home" onClick={this.logout}>Logout </span>
       </div>
       {this.state.currentVeiw.board?
