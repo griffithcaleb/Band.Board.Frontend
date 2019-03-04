@@ -48,19 +48,25 @@ class App extends Component {
       res.json()
       .then((data) => {
         Auth.authenticateToken(data.token)
-        this.setState({
-          auth: Auth.isUserAuthenticated()
-        })
+        if(data.errors){
+          console.log("invalid");
+        }else{
+          this.checkLogin()  
+        }
       },(err) => {
         console.log(err);
       })
     })
   }
 
+  checkLogin = () => {
+    this.setState({auth: Auth.isUserAuthenticated()})
+  }
+
   render() {
     return (
       <div>
-      {this.state.auth? <Nav />:
+      {this.state.auth? <Nav logState={this.checkLogin}/>:
         <div>
           <SignUp signUp={this.signUp}/>
           <Login login={this.login}/>

@@ -32,7 +32,7 @@ class PostList extends Component{
   renderPosts(){
     return this.state.postList.map((post) => {
       return(
-        <div>
+        <div key={post.id}>
           <h2>{post.title}</h2>
           <p>{post.info}</p>
         </div>

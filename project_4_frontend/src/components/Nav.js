@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import MessageBoard from './MessageBoard.js'
 import PostList from './PostList'
+import UserPost from './UserPosts'
+import Auth from '../modules/Auth.js'
 
 class Nav extends Component{
   constructor(props){
@@ -8,7 +10,9 @@ class Nav extends Component{
     this.state = {
       currentVeiw:{
         board: false,
-        posts: false
+        posts: false,
+        userPost:false,
+        home:true
       }
     }
   }
@@ -24,17 +28,35 @@ class Nav extends Component{
     })
   }
 
+  logout = () => {
+    fetch('http:localhost:3000/logout',{
+      method:'DELETE',
+      headers:{
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+    .then((res) => {
+      Auth.deauthenticateUser()
+      this.props.logState()
+    })
+  }
+
   render(){
     return(
       <>
       <div onClick={this.changeNav}>
-        <a id="posts">Posts </a>
-        <a id="board">Board </a>
+        <span id="posts">Posts </span>
+        <span id="board">Board </span>
+        <span id="userPost">User Post </span>
+        <span id="home" onClick={this.logout}>Logout </span>
       </div>
       {this.state.currentVeiw.board?
       <MessageBoard />:""}
       {this.state.currentVeiw.posts?
       <PostList />:""}
+      {this.state.currentVeiw.userPost?
+      <UserPost />:""}
 
       </>
     )
