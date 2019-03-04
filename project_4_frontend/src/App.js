@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import MessageBoard from './components/MessageBoard.js'
 import Auth from './modules/Auth'
-import PostList from './components/PostList'
+import Nav from './components/Nav'
 
 class App extends Component {
   constructor(props){
@@ -14,8 +13,8 @@ class App extends Component {
   render() {
     return (
       <div>
-      <MessageBoard />
-      <PostList />
+      <Nav />
+      
       </div>
 
     );
