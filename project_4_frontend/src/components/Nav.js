@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MessageBoard from './MessageBoard.js'
 import PostList from './PostList'
 import UserPost from './UserPosts'
+import UserProfile from './UserProfile'
 import Auth from '../modules/Auth.js'
 
 class Nav extends Component{
@@ -17,6 +18,8 @@ class Nav extends Component{
       }
     }
   }
+
+
 
   changeNav = (e) => {
     let obj = {}
@@ -59,6 +62,8 @@ class Nav extends Component{
       <PostList />:""}
       {this.state.currentVeiw.userPost?
       <UserPost />:""}
+      {this.state.currentVeiw.userProfile?
+      <UserProfile />:""}
 
       </>
     )
