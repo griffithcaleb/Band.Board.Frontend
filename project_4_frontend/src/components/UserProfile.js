@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Auth from '../modules/Auth.js'
+import EditProfile from './EditProfile'
 
 class UserProfile extends Component{
   constructor(props) {
     super(props)
     this.state = {
-      user: {}
+      user: {},
+      displayPage:true
     }
   }
 
@@ -35,12 +37,18 @@ class UserProfile extends Component{
   render(){
     return(
       <>
-      <h3>{this.state.user.username}'s Information</h3>
-      <p>Name: {this.state.user.name}</p>
-      <p>Email: {this.state.user.email}</p>
-      <p>Location: {this.state.user.locations}</p>
-      <p>Instrument: {this.state.user.instrument}</p>
-      <p>Bio: {this.state.user.bio}</p>
+      {this.state.displayPage? <div>
+        <h3>{this.state.user.username}'s Information</h3>
+        <p>Name: {this.state.user.name}</p>
+        <p>Email: {this.state.user.email}</p>
+        <p>Location: {this.state.user.locations}</p>
+        <p>Instrument: {this.state.user.instrument}</p>
+        <p>Bio: {this.state.user.bio}</p>
+        <br/>
+        <br/>
+        <button>Edit Profile</button>
+        </div>: <EditProfile user={this.state.user}/>}
+
       </>
     )
   }
