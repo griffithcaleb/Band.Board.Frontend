@@ -19,6 +19,7 @@ class SignUp extends Component{
     return(
       <>
       <form onSubmit={(e)=>this.props.signUp(e,this.state)}>
+      <h3>Sign Up</h3>
         <input type="text" name="username" onChange={this.handleChange}
          value={this.state.username} placeholder="Username"/>
         <input type="password" name="password" onChange={this.handleChange}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Auth from './modules/Auth'
 import Nav from './components/Nav'
 import SignUp from './components/SignUp'
+import Login from './components/Login'
 
 class App extends Component {
   constructor(props){
@@ -25,6 +26,28 @@ class App extends Component {
       res.json()
       .then((data) => {
         Auth.authenticateToken(data.token)
+        // this.setState({
+        //   auth: Auth.isUserAuthenticated()
+        // })
+      },(err) => {
+        console.log(err);
+      })
+    })
+  }
+
+  login = (e, data) => {
+    e.preventDefault()
+    fetch('http://localhost:3000/login',{
+      method:'POST',
+      body:JSON.stringify(data),
+      headers:{
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => {
+      res.json()
+      .then((data) => {
+        Auth.authenticateToken(data.token)
         this.setState({
           auth: Auth.isUserAuthenticated()
         })
@@ -40,6 +63,7 @@ class App extends Component {
       {this.state.auth? <Nav />:
         <div>
           <SignUp signUp={this.signUp}/>
+          <Login login={this.login}/>
         </div>
        }
       </div>
