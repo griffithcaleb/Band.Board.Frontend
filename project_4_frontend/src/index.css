@@ -26,8 +26,8 @@ code {
 .navBar >img{
   width: 50px;
   margin-top: 5%;
-  margin-left: 9%;
-  margin-right: 9%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .navBar >img:hover{
 }

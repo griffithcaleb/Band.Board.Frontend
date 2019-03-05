@@ -50,9 +50,10 @@ class Nav extends Component{
       <div className = "navBar" onClick={this.changeNav}>
         <img src = "https://image.flaticon.com/icons/svg/149/149423.svg" alt = 'home' id = "posts"/>
         <img src = "https://image.flaticon.com/icons/svg/1078/1078011.svg" alt ='message board' id = "board"/>
-        <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user page' id = "userPost"/>
+        <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user profile' id = "userProfile"/>
+        <img src = "https://image.flaticon.com/icons/svg/453/453442.svg" alt = 'user posts' id = "userPost"/>
         <img src = "https://image.flaticon.com/icons/svg/182/182448.svg" alt = 'logout' id = "home" onClick={this.logout}/>
-        <h1 id = "userProfile">test profile</h1>
+
 <hr/>
       </div>
       {this.state.currentVeiw.board?
