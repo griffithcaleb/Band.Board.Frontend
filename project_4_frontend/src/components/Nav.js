@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import MessageBoard from './MessageBoard.js'
 import Home from './Home'
 import UserPost from './UserPosts'
-import UserProfile from './UserProfile'
 import Auth from '../modules/Auth.js'
+import UserProfile from './UserProfile'
 
 class Nav extends Component{
   constructor(props){
@@ -11,15 +11,12 @@ class Nav extends Component{
     this.state = {
       currentVeiw:{
         board: false,
-        posts: false,
+        posts: true,
         userPost:false,
-        home:true,
-        userProfile:false
+        home:true
       }
     }
   }
-
-
 
   changeNav = (e) => {
     let obj = {}
@@ -66,7 +63,6 @@ class Nav extends Component{
       <UserPost />:""}
       {this.state.currentVeiw.userProfile?
       <UserProfile />:""}
-
       </div>
     )
   }
