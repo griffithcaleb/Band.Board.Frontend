@@ -51,7 +51,7 @@ class App extends Component {
         if(data.errors){
           console.log("invalid");
         }else{
-          this.checkLogin()  
+          this.checkLogin()
         }
       },(err) => {
         console.log(err);
