@@ -154,3 +154,28 @@ textarea{
   padding: 10px;
   margin: 2% auto;
 }
+.signUp{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.top {
+  margin-top: 5%;
+}
+.signIn{
+  display: block;
+}
+.signUp > input{
+  padding: 20px;
+}
+
+.username, .password, .email, .name{
+  padding: 7px;
+  margin: 2% 5%;
+  border-radius: 3px;
+}
+.login{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
