@@ -48,13 +48,14 @@ class Nav extends Component{
 
   render(){
     return(
-      <>
-      <div onClick={this.changeNav}>
-        <span id="posts">Posts </span>
-        <span id="board">Board </span>
-        <span id="userPost">User Post </span>
-        <span id="userProfile">Profile </span>
-        <span id="home" onClick={this.logout}>Logout </span>
+      <div>
+      <h1 className ='title'>Band.Board</h1>
+      <div className = "navBar" onClick={this.changeNav}>
+        <img src = "https://image.flaticon.com/icons/svg/149/149423.svg" alt = 'home' id = "posts"/>
+        <img src = "https://image.flaticon.com/icons/svg/1078/1078011.svg" alt ='message board' id = "board"/>
+        <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user page' id = "userPost"/>
+        <img src = "https://image.flaticon.com/icons/svg/182/182448.svg" alt = 'logout' id = "home" onClick={this.logout}/>
+<hr/>
       </div>
       {this.state.currentVeiw.board?
       <MessageBoard />:""}
@@ -65,7 +66,7 @@ class Nav extends Component{
       {this.state.currentVeiw.userProfile?
       <UserProfile />:""}
 
-      </>
+      </div>
     )
   }
 }
