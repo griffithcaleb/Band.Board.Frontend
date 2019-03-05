@@ -44,20 +44,17 @@ class EditPost extends Component {
 
   render(){
     return(
-      <>
+      <div className = 'editost'>
       <h4>Edit your post</h4>
       <form onSubmit={this.handleSubmit}>
-        <label>Author: </label>
-        <input type="text" onChange={this.handleChange} name="author" value={this.state.author}/><br/>
-        <label>Description: </label>
-        <input type="text" onChange={this.handleChange} name="info" value={this.state.info}/><br/>
-        <label>Title: </label>
-        <input type="text" onChange={this.handleChange} name="title" value={this.state.title}/><br/>
-        <label>View: </label>
-        <input type="text" onChange={this.handleChange} name="view" value={this.state.view}/><br/>
-        <input type="submit" />
+      <h6>Title: </h6>
+      <input type="text" onChange={this.handleChange} name="title" value={this.state.title}/><br/>
+      <h6>Post: </h6>
+      <textarea cols = '30' rows = '10' type="text" onChange={this.handleChange} name="info" value={this.state.info}></textarea><br/>
+
+      <input className = 'submit' type="submit" />
       </form>
-      </>
+      </div>
     )
   }
 }
