@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   login = (e, data) => {
+    console.log(data);
     e.preventDefault()
     fetch('http://localhost:3000/login',{
       method:'POST',
@@ -51,7 +52,7 @@ class App extends Component {
         if(data.errors){
           console.log("invalid");
         }else{
-          this.checkLogin()  
+          this.checkLogin()
         }
       },(err) => {
         console.log(err);

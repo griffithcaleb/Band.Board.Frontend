@@ -15,7 +15,7 @@ class UserPost extends Component {
   }
 
   pageLoad = () => {
-    fetch('http://localhost:3000/profile',{
+    fetch('https://bandboard-backend.herokuapp.com/profile',{
       method:'GET',
       headers:{
         token: Auth.getToken(),
@@ -34,7 +34,7 @@ class UserPost extends Component {
 
 
   deletePost = (id, index) => {
-    fetch("http://localhost:3000/posts/"+id,{
+    fetch("https://bandboard-backend.herokuapp.com/posts/"+id,{
       method: 'DELETE',
       headers:{
         'Accept': 'application/json, text/plain, */*',
