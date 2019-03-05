@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MessageBoard from './MessageBoard.js'
-import PostList from './PostList'
+import Home from './Home'
 import UserPost from './UserPosts'
 import UserProfile from './UserProfile'
 import Auth from '../modules/Auth.js'
@@ -55,12 +55,13 @@ class Nav extends Component{
         <img src = "https://image.flaticon.com/icons/svg/1078/1078011.svg" alt ='message board' id = "board"/>
         <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user page' id = "userPost"/>
         <img src = "https://image.flaticon.com/icons/svg/182/182448.svg" alt = 'logout' id = "home" onClick={this.logout}/>
+        <h1 id = "userProfile">test profile</h1>
 <hr/>
       </div>
       {this.state.currentVeiw.board?
       <MessageBoard />:""}
       {this.state.currentVeiw.posts?
-      <PostList />:""}
+      <Home />:""}
       {this.state.currentVeiw.userPost?
       <UserPost />:""}
       {this.state.currentVeiw.userProfile?

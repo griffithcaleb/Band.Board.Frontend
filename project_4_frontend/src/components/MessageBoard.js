@@ -14,6 +14,55 @@ class MessageBoard extends Component {
     }
   }
 
+ updateArray = (data) => {
+
+  if (data.post.view === "showAll"){
+    this.setState(prevState=>{
+      prevState.posts.push(data.post)
+      return{
+        posts:prevState.posts
+      }
+    })
+
+
+  }  else if (data.post.view === "showRandom"){
+      this.setState(prevState=>{
+        prevState.randomMusicChats.push(data.post)
+        return{
+          randomMusicChats:prevState.randomMusicChats
+        }
+      })
+
+
+    }
+    else if (data.post.view === "showLookingForBand"){
+      this.setState(prevState=>{
+        prevState.lookingForABand.push(data.post)
+        return{
+          lookingForABand:prevState.lookingForABand
+        }
+      })
+
+
+    }
+    else if (data.post.view === "showLookingForMusician"){
+      this.setState(prevState=>{
+        prevState.lookingForAMusican.push(data.post)
+        return{
+          lookingForAMusican:prevState.lookingForAMusican
+        }
+      })
+    }
+    else if (data.post.view === "showBuyingOrSelling"){
+      this.setState(prevState=>{
+        prevState.buyingOrSelling.push(data.post)
+        return{
+          buyingOrSelling:prevState.buyingOrSelling
+        }
+      })
+    }
+  }
+
   componentDidMount(){
     this.getposts()
   }
@@ -62,77 +111,133 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
   render(){
     return (
       <div className = 'container'>
+      <h2> Message Board </h2>
         <nav>
-          <h3 onClick={() => {
+        <h5 onClick={() => {
+          this.handleViews('showAll')
+        }}>Show All</h5>
+          <h5 onClick={() => {
             this.handleViews('showRandom')
-          }}>Random Music Chats</h3>
-          <h3 onClick={() => {
+          }}>Random Music Chats</h5>
+          <h5 onClick={() => {
             this.handleViews('showLookingForBand')
-          }}>Looking for a band</h3>
-          <h3 onClick={() => {
+          }}>Looking for a band</h5>
+          <h5 onClick={() => {
             this.handleViews('showLookingForMusician')
-          }}>Looking for a musician</h3>
-          <h3 onClick={() => {
+          }}>Looking for a musician</h5>
+          <h5 onClick={() => {
             this.handleViews('showBuyingOrSelling')
-          }}>Buying/Selling</h3>
+          }}>Buying/Selling</h5>
 
         </nav>
 
       <div className = 'MainContent'>
-      <h1> {this.state.currentView} </h1>
        <div className ='posts'>
+
        {this.state.currentView === "showAll" ?
+
         this.state.posts.map((post,index) => {
+          const split = post.created_at.split('')
+          const shorter = split.slice(0,10).join().replace(/,/g,"")
+
+
          return(
            <div key ={index} className ="singularPost">
-            {post.content}
-            {post.number_of_likes}
-            {post.author}
+           <div className = "primaryInfo">
+           <p className ='created_at'> On: {shorter} </p>
+           <p className = "author"> {post.author} posted: </p>
+           <p className = "info"> {post.info} </p>
+           </div>
+           <div className = 'likes'>
+           <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
+           </div>
+
+
+
+
            </div>
          )
        }) : '' }
        {this.state.currentView === "showRandom" ?
         this.state.randomMusicChats.map((post,index) => {
+          const split = post.created_at.split('')
+          const shorter = split.slice(0,10).join().replace(/,/g,"")
          return(
            <div key ={index} className ="singularPost">
-           {post.content}
-           {post.number_of_likes}
-           {post.author}
+           <div className = "primaryInfo">
+           <p className ='created_at'> On: {shorter} </p>
+           <p className = "author"> {post.author} posted: </p>
+           <p className = "info"> {post.info} </p>
+           </div>
+           <div className = 'likes'>
+           <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
+           </div>
+
            </div>
          )
        }) : '' }
        {this.state.currentView === "showLookingForBand" ?
         this.state.lookingForABand.map((post,index) => {
+          const split = post.created_at.split('')
+          const shorter = split.slice(0,10).join().replace(/,/g,"")
          return(
            <div key ={index} className ="singularPost">
-           {post.content}
-           {post.number_of_likes}
-           {post.author}
+           <div className = "primaryInfo">
+           <p className ='created_at'> On: {shorter} </p>
+           <p className = "author"> {post.author} posted: </p>
+           <p className = "info"> {post.info} </p>
+           </div>
+           <div className = 'likes'>
+           <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
+           </div>
+
            </div>
          )
        }) : '' }
        {this.state.currentView === "showLookingForMusician" ?
         this.state.lookingForAMusican.map((post,index) => {
+          const split = post.created_at.split('')
+          const shorter = split.slice(0,10).join().replace(/,/g,"")
          return(
            <div key ={index} className ="singularPost">
-           {post.content}
-           {post.number_of_likes}
-           {post.author}
+           <div className = "primaryInfo">
+           <p className ='created_at'> On: {shorter} </p>
+           <p className = "author"> {post.author} posted: </p>
+           <p className = "info"> {post.info} </p>
+           </div>
+           <div className = 'likes'>
+           <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
+           </div>
+
            </div>
          )
        }) : '' }
        {this.state.currentView === "showBuyingOrSelling" ?
         this.state.buyingOrSelling.map((post,index) => {
+          const split = post.created_at.split('')
+          const shorter = split.slice(0,10).join().replace(/,/g,"")
          return(
            <div key ={index} className ="singularPost">
-           {post.content}
-           {post.number_of_likes}
-           {post.author}
+           <div className = "primaryInfo">
+           <p className ='created_at'> On: {shorter} </p>
+           <p className = "author"> {post.author} posted: </p>
+           <p className = "info"> {post.info} </p>
+           </div>
+           <div className = 'likes'>
+           <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
+           </div>
+
            </div>
          )
        }) : '' }
        </div>
-        <Form submit={this.handleSubmit} view={this.state.currentView} />
+        {this.state.currentView !==
+        "showAll" ?
+        <Form
+
+        updateArray = {this.updateArray}
+        submit={this.handleSubmit}
+        view={this.state.currentView} /> : ''}
       </div>
     </div>
     )
