@@ -14,7 +14,7 @@ class App extends Component {
 
   signUp = (e,data) => {
     e.preventDefault()
-    fetch('http://localhost:3000/users',{
+    fetch('https://bandbandband.herokuapp.com/users',{
       method:'POST',
       body: JSON.stringify({user: data}),
       headers:{
@@ -37,7 +37,7 @@ class App extends Component {
 
   login = (e, data) => {
     e.preventDefault()
-    fetch('http://localhost:3000/login',{
+    fetch('https://bandbandband.herokuapp.com/login',{
       method:'POST',
       body:JSON.stringify(data),
       headers:{
@@ -45,13 +45,14 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     }).then((res) => {
+      console.log('success');
       res.json()
       .then((data) => {
         Auth.authenticateToken(data.token)
         if(data.errors){
           console.log("invalid");
         }else{
-          this.checkLogin()  
+          this.checkLogin()
         }
       },(err) => {
         console.log(err);

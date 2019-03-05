@@ -16,7 +16,7 @@ class UserProfile extends Component{
   }
 
   pageLoad = () => {
-    fetch('http://localhost:3000/profile',{
+    fetch('https://bandbandband.herokuapp.com/profile',{
       method:'GET',
       headers:{
         token: Auth.getToken(),
