@@ -1,5 +1,5 @@
 body {
-
+ background-color:#C9DDE9;
   margin: 0;
   padding: 0;
   padding-bottom: 50px;
@@ -16,6 +16,8 @@ code {
 }
 #root{
  font-family: 'Josefin Sans', sans-serif;
+
+
 }
 
 input{
@@ -41,6 +43,9 @@ textarea{
   margin-right: 5%;
 }
 .navBar >img:hover{
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  cursor: pointer;
 }
 .title{text-align: center;}
 .MainContent{
@@ -221,4 +226,50 @@ textarea{
   text-align: center;
 
 
+}
+nav> h5:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+.addAPost:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#submit:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.discardPost:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.edit:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.submit:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.MainContent > h3 {
+  text-align: center;
 }
