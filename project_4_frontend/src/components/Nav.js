@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import MessageBoard from './MessageBoard.js'
-import PostList from './PostList'
+import Home from './Home'
 import UserPost from './UserPosts'
-import UserProfile from './UserProfile'
 import Auth from '../modules/Auth.js'
 
 class Nav extends Component{
@@ -11,15 +10,12 @@ class Nav extends Component{
     this.state = {
       currentVeiw:{
         board: false,
-        posts: false,
+        posts: true,
         userPost:false,
-        home:true,
-        userProfile:false
+        home:true
       }
     }
   }
-
-
 
   changeNav = (e) => {
     let obj = {}
@@ -48,24 +44,24 @@ class Nav extends Component{
 
   render(){
     return(
-      <>
-      <div onClick={this.changeNav}>
-        <span id="posts">Posts </span>
-        <span id="board">Board </span>
-        <span id="userPost">User Post </span>
-        <span id="userProfile">Profile </span>
-        <span id="home" onClick={this.logout}>Logout </span>
+      <div>
+      <h1 className ='title'>Band.Board</h1>
+      <div className = "navBar" onClick={this.changeNav}>
+        <img src = "https://image.flaticon.com/icons/svg/149/149423.svg" alt = 'home' id = "posts"/>
+        <img src = "https://image.flaticon.com/icons/svg/1078/1078011.svg" alt ='message board' id = "board"/>
+        <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user page' id = "userPost"/>
+        <img src = "https://image.flaticon.com/icons/svg/182/182448.svg" alt = 'logout' id = "home" onClick={this.logout}/>
+<hr/>
       </div>
       {this.state.currentVeiw.board?
       <MessageBoard />:""}
       {this.state.currentVeiw.posts?
-      <PostList />:""}
+      <Home />:""}
       {this.state.currentVeiw.userPost?
       <UserPost />:""}
-      {this.state.currentVeiw.userProfile?
-      <UserProfile />:""}
 
-      </>
+</div>
+
     )
   }
 }
