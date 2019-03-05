@@ -4,6 +4,7 @@ import Home from './Home'
 import UserPost from './UserPosts'
 import Auth from '../modules/Auth.js'
 import UserProfile from './UserProfile'
+import Messages from './Messages'
 
 class Nav extends Component{
   constructor(props){
@@ -13,6 +14,7 @@ class Nav extends Component{
         board: false,
         posts: true,
         userPost:false,
+        message:false,
         home:true
       }
     }
@@ -53,6 +55,7 @@ class Nav extends Component{
         <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user profile' id = "userProfile"/>
         <img src = "https://image.flaticon.com/icons/svg/453/453442.svg" alt = 'user posts' id = "userPost"/>
         <img src = "https://image.flaticon.com/icons/svg/182/182448.svg" alt = 'logout' id = "home" onClick={this.logout}/>
+        <h1 id="message">Messages</h1>
 
 <hr/>
       </div>
@@ -64,6 +67,8 @@ class Nav extends Component{
       <UserPost />:""}
       {this.state.currentVeiw.userProfile?
       <UserProfile />:""}
+      {this.state.currentVeiw.message?
+      <Messages />:""}
       </div>
     )
   }
