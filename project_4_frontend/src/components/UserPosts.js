@@ -32,6 +32,7 @@ class UserPost extends Component {
     })
   }
 
+
   deletePost = (id, index) => {
     fetch("http://localhost:3000/posts/"+id,{
       method: 'DELETE',
