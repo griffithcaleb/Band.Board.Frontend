@@ -45,23 +45,27 @@ class UserProfile extends Component{
 
   render(){
     return(
-      <>
+      <div className = 'profile'>
       {this.state.displayPage? <div>
-        <h3>{this.state.user.username}'s Information</h3>
-        <p>Name: {this.state.user.name}</p>
-        <p>Email: {this.state.user.email}</p>
-        <p>Location: {this.state.user.locations}</p>
-        <p>Instrument: {this.state.user.instrument}</p>
-        <p>Bio: {this.state.user.bio}</p>
+        <h4> Name:</h4>
+        <p>{this.state.user.name}</p>
+        <h4> email:</h4>
+        <p>{this.state.user.email}</p>
+        <h4> location:</h4>
+        <p>{this.state.user.locations}</p>
+        <h4>instrument:</h4>
+        <p>{this.state.user.instrument}</p>
+        <h4> bio:</h4>
+        <p>{this.state.user.bio}</p>
         <br/>
         <br/>
-        <button onClick={this.toggleEdit}>Edit Profile</button>
+        <button className = 'edit' onClick={this.toggleEdit}>Edit Profile</button>
         </div>: <EditProfile
         reload={this.pageLoad}
         toggle={this.toggleEdit}
         user={this.state.user}/>}
+        </div>
 
-      </>
     )
   }
 }

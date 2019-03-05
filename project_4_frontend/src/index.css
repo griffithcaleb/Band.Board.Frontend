@@ -133,3 +133,24 @@ textarea{
   margin: 2% auto;
   font-size: 14px
 }
+.profile{
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 30%;
+  margin: 2% auto;
+}
+.edit{
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 115px;
+  padding: 10px;
+  margin: 2% auto;
+}
+.submit{
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 115px;
+  padding: 10px;
+  margin: 2% auto;
+}
