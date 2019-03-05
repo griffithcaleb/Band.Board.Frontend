@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Form from "./Form.js"
+import DirectMessage from "./DirectMessage.js"
 
 class MessageBoard extends Component {
   constructor(props){
@@ -10,7 +11,8 @@ class MessageBoard extends Component {
       randomMusicChats:[],
       lookingForABand:[],
       lookingForAMusican:[],
-      buyingOrSelling: []
+      buyingOrSelling: [],
+      replyForm: false
     }
   }
 
@@ -108,6 +110,18 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
     })
   }
 
+  messegerInfo = (index) => {
+    console.log(index);
+    this.setState((prev) => {
+      prev.replyForm = !prev.replyForm
+      return{
+        replyForm: prev.replyForm
+      }
+    })
+  }
+
+
+
   render(){
     return (
       <div className = 'container'>
@@ -150,6 +164,8 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
            </div>
            <div className = 'likes'>
            <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
+           <p onClick={()=>this.messegerInfo(index)}>Reply</p>
+           {this.state.replyForm? <DirectMessage />: ""}
            </div>
 
 
