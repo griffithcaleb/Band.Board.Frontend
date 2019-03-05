@@ -33,6 +33,15 @@ class UserProfile extends Component{
     })
   }
 
+  toggleEdit = () => {
+    this.setState((pre) => {
+      pre.displayPage = !pre.displayPage
+      return{
+        displayPage: pre.displayPage
+      }
+    })
+  }
+
 
   render(){
     return(
@@ -46,8 +55,11 @@ class UserProfile extends Component{
         <p>Bio: {this.state.user.bio}</p>
         <br/>
         <br/>
-        <button>Edit Profile</button>
-        </div>: <EditProfile user={this.state.user}/>}
+        <button onClick={this.toggleEdit}>Edit Profile</button>
+        </div>: <EditProfile
+        reload={this.pageLoad}
+        toggle={this.toggleEdit}
+        user={this.state.user}/>}
 
       </>
     )
