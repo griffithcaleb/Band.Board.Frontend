@@ -17,7 +17,7 @@ class EditPost extends Component {
     let obj = this.state
     obj.number_of_likes = this.props.post.number_of_likes
     e.preventDefault()
-    fetch('http://localhost:3000/posts/'+ this.props.post.id,{
+    fetch('https://bandbandband.herokuapp.com/posts/'+ this.props.post.id,{
       method:'PUT',
       body:JSON.stringify({post: obj}),
       headers:{

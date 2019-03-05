@@ -35,7 +35,7 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/posts',{
+    fetch('https://bandbandband.herokuapp.com/posts',{
       body:JSON.stringify(this.state),
       method: "POST",
       headers:{

@@ -68,7 +68,7 @@ class MessageBoard extends Component {
   }
 
  getposts = () => {
-   fetch("http://localhost:3000/posts")
+   fetch("https://bandbandband.herokuapp.com/posts")
    .then(data=>data.json())
    .then(json => {
      this.sortPosts(json.posts)

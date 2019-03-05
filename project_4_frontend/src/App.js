@@ -14,7 +14,7 @@ class App extends Component {
 
   signUp = (e,data) => {
     e.preventDefault()
-    fetch('http://localhost:3000/users',{
+    fetch('https://bandbandband.herokuapp.com/users',{
       method:'POST',
       body: JSON.stringify({user: data}),
       headers:{

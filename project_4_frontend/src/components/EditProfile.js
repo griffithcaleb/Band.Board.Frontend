@@ -19,7 +19,7 @@ class EditProfile extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/users/'+ this.props.user.id,{
+    fetch('https://bandbandband.herokuapp.com/users/'+ this.props.user.id,{
       method:'PUT',
       body:JSON.stringify({user: this.state}),
       headers:{

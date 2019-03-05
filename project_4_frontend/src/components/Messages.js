@@ -10,7 +10,7 @@ class Messages extends Component {
   }
 
   pageLoad = () => {
-    fetch('http://localhost:3000/messages',{
+    fetch('https://bandbandband.herokuapp.com/messages',{
       method:'GET',
       headers:{
         token: Auth.getToken(),

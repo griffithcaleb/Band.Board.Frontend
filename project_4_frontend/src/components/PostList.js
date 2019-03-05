@@ -10,7 +10,7 @@ class PostList extends Component{
   }
 
   fetchData = () => {
-    fetch('http://localhost:3000/posts')
+    fetch('https://bandbandband.herokuapp.com/posts')
     .then((res) => {
       res.json()
       .then((data) => {
