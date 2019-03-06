@@ -21,7 +21,7 @@ class Messages extends Component {
       <div className="container">
       {this.state.messages? this.state.messages.map((message) => {
         return(
-          <div className="MainContent" key={message.id}>
+          <div className="message" key={message.id}>
             Sent By: {message.sent_name}
             <p>{message.message}</p>
           </div>
