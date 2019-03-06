@@ -37,7 +37,7 @@ class SignUp extends Component{
     return(
 
       <div className = 'signUp top'>
-      <h1> Band.Board </h1>
+      <h1 className = 'firstTimeTitle'> Band.Board </h1>
       {this.state.showSignUp?
       <form onSubmit={(e)=>this.props.signUp(e,this.state)}>
       <h3>Sign Up</h3>
