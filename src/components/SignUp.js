@@ -8,13 +8,15 @@ class SignUp extends Component{
       password:"",
       email:"",
       name:'',
-      showSignUp: false
+      showSignUp: false,
+      ShowSignUpButton: true
     }
     this.handleChange = this.handleChange.bind(this)
   }
   showSignUp = () => {
     this.setState({
-      showSignUp: !this.state.showSignUp
+      showSignUp: !this.state.showSignUp,
+      ShowSignUpButton: false
     })
   }
   setForm = () => {
@@ -23,7 +25,8 @@ class SignUp extends Component{
       username: '',
       password: '',
       email: '',
-      name: ''
+      name: '',
+      ShowSignUpButton: true
     })
   }
   handleChange(e){
@@ -47,8 +50,9 @@ class SignUp extends Component{
         <input className = 'name' type="text" name="name" onChange={this.handleChange}
          value={this.state.name} placeholder="Name"/>
          <input className='submit signIn' type="submit"/>
+         <h6 onClick = {this.setForm} className = "submit">Cancel Sign Up </h6>
       </form>: '' }
-      <h6 className = 'submit' onClick = {this.showSignUp}>Sign Up</h6>
+      {this.state.ShowSignUpButton ? <h6 className = 'submit' onClick = {this.showSignUp}>Sign Up</h6>:''}
       </div>
     )
   }
