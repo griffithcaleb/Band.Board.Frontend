@@ -31,6 +31,9 @@ textarea{
 .navBar{
   width: 100%;
   text-align: center;
+  background-color: #F5F5F5;
+  padding-top: 0;
+  margin-top: -30px;
 }
 .navBar > h2{
   width: 25%;
@@ -47,7 +50,11 @@ textarea{
   border-bottom: 2px solid black;
   cursor: pointer;
 }
-.title{text-align: center;}
+.title{text-align: center;
+color: #003399;
+font-size: 40px;
+padding-top: 2%;
+margin-bottom: -3%}
 .MainContent{
   margin-bottom: 5%;
 }
@@ -56,6 +63,7 @@ textarea{
   width: 95%;
   border: 1px solid black;
   border-radius: 3px;
+  background-color: #F5F5F5	;
 
 }
 .container > h2{
@@ -121,7 +129,8 @@ nav > h5 {
   display: block;
   margin: 2% auto;
   border-radius: 3px;
-  text-align: center
+  text-align: center;
+
 }
 textarea{
   resize: none;
@@ -157,6 +166,7 @@ textarea{
   border-radius: 3px;
   width: 30%;
   margin: 2% auto;
+  background-color: #F5F5F5
 }
 .edit{
   border: 1px solid black;
@@ -210,6 +220,14 @@ textarea{
   border: 1px solid black;
   text-align: center;
   border-radius: 3px;
+  background-color: #F5F5F5
+
+}
+.singularUserPost{
+  border: 1px solid black;
+  width: 60%;
+  margin: 2% auto;
+  border-radius: 3px;
 
 }
 .edit{
@@ -228,48 +246,57 @@ textarea{
 
 }
 nav> h5:hover{
-  background-color: silver;
+  background-color: #003399;
   color: white;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
 
 }
 .addAPost:hover{
-  background-color: silver;
+  background-color: #003399;
   color: white;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
 }
 #submit:hover{
-  background-color: silver;
+  background-color: #003399;
   color: white;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
 }
 .discardPost:hover{
-  background-color: silver;
+  background-color: #003399;
   color: white;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
 }
 .edit:hover{
-  background-color: silver;
+  background-color: #003399;
   color: white;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
 }
 .submit:hover{
-  background-color: silver;
+  background-color: #003399;
   color: white;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   cursor: pointer;
 }
 .MainContent > h3 {
   text-align: center;
+}
+.bb {
+  color: #003399
+}
+.homepagemain{
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: #F5F5F5;
+  padding: 10px;
 }

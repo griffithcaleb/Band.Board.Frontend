@@ -80,7 +80,7 @@ class UserPost extends Component {
         toggle={this.toggleEdit} post={this.state.post}/>:<span>
         {this.state.myPosts.map((post,index) => {
           return(
-            <div key={post.id}>
+            <div className = "singularUserPost" key={post.id}>
               <h2> Title: </h2>
               <p>{post.title}</p>
               <h2> Post: </h2>

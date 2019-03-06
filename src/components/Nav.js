@@ -48,8 +48,8 @@ class Nav extends Component{
   render(){
     return(
       <div>
-      <h1 className ='title'>Band.Board</h1>
       <div className = "navBar" onClick={this.changeNav}>
+        <h1 className ='title'>Band.Board</h1>
         <img src = "https://image.flaticon.com/icons/svg/149/149423.svg" alt = 'home' id = "posts"/>
         <img src = "https://image.flaticon.com/icons/svg/1078/1078011.svg" alt ='message board' id = "board"/>
         <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user profile' id = "userProfile"/>
