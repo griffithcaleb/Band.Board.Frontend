@@ -20,6 +20,25 @@ class Nav extends Component{
     }
   }
 
+  pageLoad = () => {
+    console.log("its reloading");
+    fetch('http://localhost:3000/messages',{
+      method:'GET',
+      headers:{
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+    .then((res) => {
+      res.json()
+      .then((data) => {
+        this.setState({messages:data.messages})
+      },(err) => {
+        console.log(err);
+      })
+    })
+  }
+
   changeNav = (e) => {
     let obj = {}
     for (let key in this.state.currentVeiw) {
@@ -45,6 +64,10 @@ class Nav extends Component{
     })
   }
 
+  componentDidMount(){
+    this.pageLoad()
+  }
+
   render(){
     return(
       <div>
@@ -60,7 +83,7 @@ class Nav extends Component{
 <hr/>
       </div>
       {this.state.currentVeiw.board?
-      <MessageBoard />:""}
+      <MessageBoard reload={this.pageLoad}/>:""}
       {this.state.currentVeiw.posts?
       <Home />:""}
       {this.state.currentVeiw.userPost?
@@ -68,7 +91,8 @@ class Nav extends Component{
       {this.state.currentVeiw.userProfile?
       <UserProfile />:""}
       {this.state.currentVeiw.message?
-      <Messages />:""}
+      <Messages reload={this.pageLoad}
+      messages={this.state.messages}/>:""}
       </div>
     )
   }

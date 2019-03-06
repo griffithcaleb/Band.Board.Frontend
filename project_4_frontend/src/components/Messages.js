@@ -5,34 +5,20 @@ class Messages extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      messages: null
+      messages: this.props.messages
     }
   }
 
-  pageLoad = () => {
-    fetch('http://localhost:3000/messages',{
-      method:'GET',
-      headers:{
-        token: Auth.getToken(),
-        'Authorization': `Token ${Auth.getToken()}`
-      }
-    })
-    .then((res) => {
-      res.json()
-      .then((data) => {
-        this.setState({messages:data.messages})
-      },(err) => {
-        console.log(err);
-      })
-    })
-  }
+
 
 
   componentDidMount(){
-    this.pageLoad()
+    console.log(this.props);
+    this.props.reload()
   }
 
   render(){
+
     return(
       <>
       {this.state.messages? this.state.messages.map((message) => {

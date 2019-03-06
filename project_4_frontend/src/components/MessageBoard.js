@@ -12,7 +12,7 @@ class MessageBoard extends Component {
       lookingForABand:[],
       lookingForAMusican:[],
       buyingOrSelling: [],
-      replyForm: false
+      sendTo: false
     }
   }
 
@@ -110,12 +110,27 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
     })
   }
 
-  messegerInfo = (index) => {
-    console.log(index);
+  restReplay = () => {
     this.setState((prev) => {
-      prev.replyForm = !prev.replyForm
+      for (let i = 0; i < prev.posts.length; i++) {
+        prev.posts[i].id = 1
+      }
+      return{}
+
+    })
+  }
+
+  messegerInfo = (index,user) => {
+    this.restReplay()
+    this.setState({sendTo:user})
+    this.setState((prev) => {
+      if(prev.posts[index].id > 0){
+        prev.posts[index].id = 0
+      }else{
+        prev.posts[index].id = 1
+      }
       return{
-        replyForm: prev.replyForm
+        // posts[index].id: prev.posts[index].id
       }
     })
   }
@@ -164,8 +179,9 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
            </div>
            <div className = 'likes'>
            <p className ='number_of_likes'> Likes: {post.number_of_likes} </p>
-           <p onClick={()=>this.messegerInfo(index)}>Reply</p>
-           {this.state.replyForm? <DirectMessage />: ""}
+           <p onClick={()=>this.messegerInfo(index,post.user_id)}>Reply</p>
+           {this.state.posts[index].id == 0? <DirectMessage reload={this.props.reload}
+             sendTo={this.state.sendTo}/>: ""}
            </div>
 
 
