@@ -21,7 +21,6 @@ class Nav extends Component{
   }
 
   pageLoad = () => {
-    console.log("its reloading");
     fetch('https://bandbandband.herokuapp.com/messages',{
       method:'GET',
       headers:{

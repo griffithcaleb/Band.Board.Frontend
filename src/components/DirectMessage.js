@@ -11,7 +11,7 @@ class DirectMessage extends Component {
   }
 
   pageLoad = () => {
-    fetch('http://localhost:3000/profile',{
+    fetch('https://bandbandband.herokuapp.com/profile',{
       method:'GET',
       headers:{
         token: Auth.getToken(),
@@ -38,7 +38,7 @@ class DirectMessage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/messages',{
+    fetch('https://bandbandband.herokuapp.com/messages',{
       method:'POST',
       body: JSON.stringify({message: this.state}),
       headers:{
