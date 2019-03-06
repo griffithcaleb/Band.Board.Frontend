@@ -76,6 +76,7 @@ class Nav extends Component{
         <img src = "https://image.flaticon.com/icons/svg/1078/1078011.svg" alt ='message board' id = "board"/>
         <img src = "https://image.flaticon.com/icons/svg/1246/1246351.svg" alt = 'user profile' id = "userProfile"/>
         <img src = "https://image.flaticon.com/icons/svg/453/453442.svg" alt = 'user posts' id = "userPost"/>
+        <i className="far fa-envelope fa-4x" id="message"></i>
         <img src = "https://image.flaticon.com/icons/svg/182/182448.svg" alt = 'logout' id = "home" onClick={this.logout}/>
 
 

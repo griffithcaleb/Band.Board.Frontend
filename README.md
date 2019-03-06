@@ -21,3 +21,6 @@ The site is build as a Single Page Application using React.js to render the user
 ##### Link to live app:
 
 [Click Here](https://band-musician-finder.herokuapp.com/)
+
+##### Resources
+ * flaticon.com for icons 

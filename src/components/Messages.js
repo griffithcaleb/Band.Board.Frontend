@@ -18,16 +18,17 @@ class Messages extends Component {
   render(){
 
     return(
-      <>
+      <div className="container">
       {this.state.messages? this.state.messages.map((message) => {
         return(
-          <div key={message.id}>
+          <div className="MainContent" key={message.id}>
             Sent By: {message.sent_name}
+            <p>{message.message}</p>
           </div>
         )
       }): "Loading messages...."}
 
-      </>
+      </div>
     )
   }
 }
