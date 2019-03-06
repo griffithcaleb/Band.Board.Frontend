@@ -81,8 +81,10 @@ class UserPost extends Component {
         {this.state.myPosts.map((post,index) => {
           return(
             <div key={post.id}>
-              <h2>{post.title}</h2>
-                <p>{post.info}
+              <h2> Title: </h2>
+              <p>{post.title}</p>
+              <h2> Post: </h2>
+              <p>{post.info}
                 <span
                 onClick={()=>this.deletePost(post.id,index)}
                 >  <img  className = 'delete' src = 'https://image.flaticon.com/icons/svg/126/126468.svg' /> </span>

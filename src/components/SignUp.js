@@ -17,6 +17,15 @@ class SignUp extends Component{
       showSignUp: !this.state.showSignUp
     })
   }
+  setForm = () => {
+    this.setState({
+      showSignUp: false,
+      username: '',
+      password: '',
+      email: '',
+      name: ''
+    })
+  }
   handleChange(e){
     this.setState({[e.target.name]: e.target.value})
   }
