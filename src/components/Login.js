@@ -7,7 +7,8 @@ class Login extends Component{
       username:"",
       password:'',
       showCreateForm: false,
-      showLoginForm: false
+      showLoginForm: false,
+      showLoginButton: true,
     }
   }
 
@@ -17,7 +18,8 @@ class Login extends Component{
 
   showLoginForm = () => {
     this.setState({
-      showLoginForm: !this.state.showLoginForm
+      showLoginForm: !this.state.showLoginForm,
+      showLoginButton: false,
     })
   }
 
@@ -34,7 +36,7 @@ class Login extends Component{
          value={this.state.password} placeholder="Password"/>
          <input className ='submit signIn' type="submit"/>
       </form> : ' '}
-      <h6 className = 'submit' onClick = {this.showLoginForm}>Login</h6>
+      {this.state.showLoginButton? <h6 className = 'submit' onClick = {this.showLoginForm}>Login</h6>:''}
       </div>
     )
   }
