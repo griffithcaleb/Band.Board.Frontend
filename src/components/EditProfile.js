@@ -45,17 +45,18 @@ class EditProfile extends Component {
       <>
       <h4>Edit your Profile</h4>
       <form onSubmit={this.handleSubmit}>
-        <label>Name: </label>
+        <h4>Name: </h4>
         <input type="text" onChange={this.handleChange} name="name" value={this.state.name}/><br/>
-        <label>Email: </label>
+        <h4>Email: </h4>
         <input type="email" onChange={this.handleChange} name="email" value={this.state.email}/><br/>
-        <label>Location: </label>
+        <h4>Location: </h4>
         <input type="text" onChange={this.handleChange} name="locations" value={this.state.locations}/><br/>
-        <label>Instrument: </label>
+        <h4>Instrument: </h4>
         <input type="text" onChange={this.handleChange} name="instrument" value={this.state.instrument}/><br/>
-        <label>Bio: </label>
-        <input type="text" onChange={this.handleChange} name="bio" value={this.state.bio}/><br/>
-        <input type="submit" />
+        <h4>Bio: </h4>
+        <textarea  rows ='10' cols = '50' type="text" onChange={this.handleChange} name="bio" value={this.state.bio}/>
+         <br/>
+        <input className = 'submit' type="submit" />
       </form>
       </>
     )

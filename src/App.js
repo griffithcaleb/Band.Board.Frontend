@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   login = (e, data) => {
+    console.log(data);
     e.preventDefault()
     fetch('https://bandbandband.herokuapp.com/login',{
       method:'POST',

@@ -23,6 +23,7 @@ class MessageBoard extends Component {
       prevState.posts.push(data.post)
       return{
         posts:prevState.posts
+
       }
     })
 
@@ -32,6 +33,7 @@ class MessageBoard extends Component {
         prevState.randomMusicChats.push(data.post)
         return{
           randomMusicChats:prevState.randomMusicChats
+
         }
       })
 
@@ -42,6 +44,7 @@ class MessageBoard extends Component {
         prevState.lookingForABand.push(data.post)
         return{
           lookingForABand:prevState.lookingForABand
+
         }
       })
 
@@ -52,6 +55,7 @@ class MessageBoard extends Component {
         prevState.lookingForAMusican.push(data.post)
         return{
           lookingForAMusican:prevState.lookingForAMusican
+
         }
       })
     }
@@ -60,6 +64,7 @@ class MessageBoard extends Component {
         prevState.buyingOrSelling.push(data.post)
         return{
           buyingOrSelling:prevState.buyingOrSelling
+
         }
       })
     }
@@ -141,6 +146,7 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
     return (
       <div className = 'container'>
       <h2> Message Board </h2>
+
         <nav>
         <h5 onClick={() => {
           this.handleViews('showAll')
@@ -161,6 +167,11 @@ setPosts = (posts,random,lookingForABand,lookingForAMusician,buyingOrSelling) =>
         </nav>
 
       <div className = 'MainContent'>
+      {this.state.currentView === 'showAll'? <h3> All Posts </h3> : ''}
+      {this.state.currentView === 'showRandom'? <h3> Random Music Chats </h3> : ''}
+      {this.state.currentView === 'showLookingForBand'? <h3> Musicans Seeking a Band </h3> : ''}
+      {this.state.currentView === 'showLookingForMusician'? <h3> Band Seeking a Musician </h3> : ''}
+      {this.state.currentView === 'showBuyingOrSelling'? <h3> Buying or Selling </h3> : ''}
        <div className ='posts'>
 
        {this.state.currentView === "showAll" ?

@@ -74,21 +74,23 @@ class UserPost extends Component {
 
   render(){
     return(
-      <>
+      <div className = "userPosts">
       <h2>Your Posts</h2>
       {this.state.editForm? <EditPost reload={this.pageLoad}
         toggle={this.toggleEdit} post={this.state.post}/>:<span>
         {this.state.myPosts.map((post,index) => {
           return(
             <div key={post.id}>
-              <h2>{post.title}</h2>
-                <p>{post.info}
+              <h2> Title: </h2>
+              <p>{post.title}</p>
+              <h2> Post: </h2>
+              <p>{post.info}
                 <span
                 onClick={()=>this.deletePost(post.id,index)}
-                >   X   </span>
-                <button onClick={() => {
+                >  <img  className = 'delete' src = 'https://image.flaticon.com/icons/svg/126/126468.svg' /> </span>
+                <h6 className ="edit" onClick={() => {
                   this.handleEdit(post)
-                }}>Edit</button>
+                }}>Edit</h6>
                 </p>
 
             </div>
@@ -96,7 +98,7 @@ class UserPost extends Component {
         })}
         </span>}
 
-      </>
+      </div>
     )
   }
 }

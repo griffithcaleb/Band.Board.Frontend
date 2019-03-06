@@ -1,4 +1,5 @@
 body {
+ background-color:#C9DDE9;
   margin: 0;
   padding: 0;
   padding-bottom: 50px;
@@ -13,8 +14,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#root{
+ font-family: 'Josefin Sans', sans-serif;
 
 
+}
+
+input{
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+textarea{
+  font-family: 'Josefin Sans', sans-serif;
+
+}
 .navBar{
   width: 100%;
   text-align: center;
@@ -30,6 +43,9 @@ code {
   margin-right: 5%;
 }
 .navBar >img:hover{
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  cursor: pointer;
 }
 .title{text-align: center;}
 .MainContent{
@@ -131,5 +147,129 @@ textarea{
   width: 100px;
   padding: 10px;
   margin: 2% auto;
-  font-size: 14px
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.profile{
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 30%;
+  margin: 2% auto;
+}
+.edit{
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 115px;
+  padding: 10px;
+  margin: 2% auto;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.submit{
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 115px;
+  padding: 10px;
+  margin: 2% auto;
+
+
+}
+.signUp{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.top {
+  margin-top: 5%;
+}
+.signIn{
+  display: block;
+}
+.signUp > input{
+  padding: 20px;
+}
+
+.username, .password, .email, .name{
+  padding: 7px;
+  margin: 2% 5%;
+  border-radius: 3px;
+}
+.login{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.delete {
+  width: 20px;
+}
+.userPosts{
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 3px;
+
+}
+.edit{
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 75px;
+  padding: 10px;
+  margin: 2% auto;
+}
+.homepagemain{
+  width: 40%;
+  margin: 5% auto;
+  font-size: 20px;
+  text-align: center;
+
+
+}
+nav> h5:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+.addAPost:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#submit:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.discardPost:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.edit:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.submit:hover{
+  background-color: silver;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.MainContent > h3 {
+  text-align: center;
 }

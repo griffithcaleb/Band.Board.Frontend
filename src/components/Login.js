@@ -5,7 +5,9 @@ class Login extends Component{
     super(props)
     this.state = {
       username:"",
-      password:''
+      password:'',
+      showCreateForm: false,
+      showLoginForm: false
     }
   }
 
@@ -13,19 +15,27 @@ class Login extends Component{
     this.setState({[e.target.name]:e.target.value})
   }
 
+  showLoginForm = () => {
+    this.setState({
+      showLoginForm: !this.state.showLoginForm
+    })
+  }
 
   render(){
     return(
-      <>
+
+      <div className = 'login'>
+      {this.state.showLoginForm?
       <form onSubmit={(e)=>this.props.login(e,this.state)}>
       <h3>Login</h3>
-        <input type="text" name="username" onChange={this.handleChange}
+        <input className ='username' type="text" name="username" onChange={this.handleChange}
          value={this.state.username} placeholder="Username"/>
-        <input type="password" name="password" onChange={this.handleChange}
+        <input className ='password' type="password" name="password" onChange={this.handleChange}
          value={this.state.password} placeholder="Password"/>
-         <input type="submit"/>
-      </form>
-      </>
+         <input className ='submit signIn' type="submit"/>
+      </form> : ' '}
+      <h6 className = 'submit' onClick = {this.showLoginForm}>Login</h6>
+      </div>
     )
   }
 }
