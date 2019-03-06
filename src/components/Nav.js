@@ -22,7 +22,7 @@ class Nav extends Component{
 
   pageLoad = () => {
     console.log("its reloading");
-    fetch('http://localhost:3000/messages',{
+    fetch('https://bandbandband.herokuapp.com/messages',{
       method:'GET',
       headers:{
         token: Auth.getToken(),
@@ -51,7 +51,7 @@ class Nav extends Component{
   }
 
   logout = () => {
-    fetch('http:localhost:3000/logout',{
+    fetch('https://bandbandband.herokuapp.com/logout',{
       method:'DELETE',
       headers:{
         token: Auth.getToken(),

@@ -9,28 +9,6 @@ class Messages extends Component {
     }
   }
 
-<<<<<<< HEAD:project_4_frontend/src/components/Messages.js
-
-=======
-  pageLoad = () => {
-    fetch('https://bandbandband.herokuapp.com/messages',{
-      method:'GET',
-      headers:{
-        token: Auth.getToken(),
-        'Authorization': `Token ${Auth.getToken()}`
-      }
-    })
-    .then((res) => {
-      res.json()
-      .then((data) => {
-        this.setState({messages:data.messages})
-      },(err) => {
-        console.log(err);
-      })
-    })
-  }
->>>>>>> 2b6efdaca7402b332b1edf455b8f6ff7e6593c78:src/components/Messages.js
-
 
   componentDidMount(){
     console.log(this.props);
